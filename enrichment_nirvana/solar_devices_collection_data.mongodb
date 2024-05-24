@@ -1,0 +1,35 @@
+db.solar_devices.insertOne({
+  panel_id:"device_0",
+  panel_type:"Canadian Solar",
+  panel_model:"CS6R-400MS-HL"
+});
+db.solar_devices.insertOne({
+  panel_id:"device_1", 
+  panel_type:"Panasonic", 
+  panel_model:"PNS-EVPV400HK"
+});
+db.solar_devices.insertOne({
+  panel_id:"device_2", 
+  panel_type:"Q CELLS", 
+  panel_model:"Q.PEAK DUO BLK ML-G10+"
+});
+db.solar_devices.insertOne({
+  panel_id:"device_3", 
+  panel_type:"Panasonic", 
+  panel_model:"PNS-400-EVP132GL"
+});
+db.solar_devices.insertOne({
+  panel_id: "device_4",
+  panel_type: "Solaria",
+  panel_model: "PowerX-400R-4T",
+});
+db.solar_devices.insertOne({
+  panel_id: "device_5",
+  panel_type: "Silfab",
+  panel_model: "SIL-400-HC+",
+});
+db.solar_devices.insertOne({
+  panel_id:"device_6", 
+  panel_type:"Q CELLS", 
+  panel_model:"Q.PEAK DUO BLK ML-G10+/T"
+});

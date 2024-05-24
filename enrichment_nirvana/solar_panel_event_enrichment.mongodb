@@ -1,0 +1,33 @@
+
+// sample solar generated source
+
+let s = { 
+    $source: { connectionName: 'sample_stream_solar' } 
+};
+
+// replace with your connection registry entry
+let l = {
+    $lookup: { 
+        from: { connectionName: 'Cluster0', db: 'demo', coll: 'solar_devices'}, 
+        localField: 'device_id', 
+        foreignField: 'panel_id', 
+        as: "panel_detail"}
+    };
+
+let r = {
+  $replaceRoot: {
+    newRoot: {
+      $mergeObjects: [{ $arrayElemAt: ["$panel_detail", 0] }, "$$ROOT"],
+    },
+  },
+};
+
+let p = { 
+    $project: { panel_detail: 0, _id: 0, panel_id: 0 } 
+};
+
+// create a processor with these stages
+processor = [s, l, r, p]
+
+// run it
+sp.process(processor);
